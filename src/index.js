@@ -65,7 +65,7 @@ export default class AttachesTool {
    * @param {object} config
    * @param {API} api
    */
-  constructor({ data, config, api }) {
+  constructor({ data, config, api, readOnly }) {
     this.api = api;
 
     this.nodes = {
@@ -88,6 +88,8 @@ export default class AttachesTool {
       uploader: config.uploader || undefined,
       additionalRequestHeaders: config.additionalRequestHeaders || {}
     };
+
+    this.readOnly = readOnly;
 
     this.data = data;
 
@@ -346,7 +348,7 @@ export default class AttachesTool {
 
     if (title) {
       this.nodes.title = this.make('div', this.CSS.title, {
-        contentEditable: true
+        contentEditable: !this.readOnly
       });
 
       this.nodes.title.textContent = title;
