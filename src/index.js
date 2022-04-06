@@ -115,6 +115,10 @@ export default class AttachesTool {
     };
   }
 
+  static get isReadOnlySupported() {
+    return true;
+  }
+  
   /**
    * Tool's CSS classes
    */
