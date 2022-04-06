@@ -300,8 +300,8 @@ export default class AttachesTool {
 
       this.nodes.button.remove();
       this.showFileData();
-      this.moveCaretToEnd(this.nodes.title);
-      this.nodes.title.focus();
+      // this.moveCaretToEnd(this.nodes.title);
+      // this.nodes.title.focus();
       this.removeLoader();
     } else {
       this.uploadingFailed(this.config.errorMessage);
